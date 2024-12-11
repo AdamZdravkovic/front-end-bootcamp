@@ -20,47 +20,56 @@
       <section>
         <h2>Send Us a Message</h2>
         <form action="/submit_form" method="GET">
-          <label>
-            Name: <input type="text" name="username" />
-          </label><br /><br />
-          <label>
-            Email: <input type="email" name="email" />
-          </label><br /><br />
-          <label>
-            Phone: <input type="number" name="contact" />
-          </label><br /><br />
-          <label>
-            Birthdate: <input type="date" name="birthdate" />
-          </label><br /><br />
-          <label>
-            Message: <br /><textarea rows="3" cols="30"></textarea>
-          </label><br /><br />
-          <label>
-            Subscribe to our newsletter? <input type="checkbox" name="subscribe" />
-          </label><br /><br />
-          
-          <label>
-            Preferred method of contact: <br />
-            <input type="radio" name="method" value="email" /> Email <br />
-            <input type="radio" name="method" value="phone" /> Phone
-          </label><br /><br />
+          <label>Name:</label>
+          <input type="text" name="username" required maxlength="12" />
+          <br /><br />
 
-          <label>
-            Reason for contacting us: 
-            <select>
-              <option value="Question">Question</option>
-              <option value="Inquiry">Inquiry</option>
-              <option value="Feedback">Feedback</option>
-            </select>
-          </label><br /><br />
-          
-          <label>
-            Upload a file: <input type="file" name="fileupload" />
-          </label><br /><br />
-          
+          <label>Email:</label>
+          <input type="email" name="email" />
+          <br /><br />
+
+          <label>Phone:</label>
+          <input type="number" name="contact" />
+          <br /><br />
+
+          <label>Birthdate:</label>
+          <input type="date" name="birthdate" />
+          <br /><br />
+
+          <label>Message:</label>
+          <br />
+          <textarea rows="3" cols="30" name="message"></textarea>
+          <br /><br />
+
+          <label>Subscribe to our newsletter?</label>
+          <input type="checkbox" name="subscribe" />
+          <br /><br />
+
+          <label>Preferred method of contact:</label>
+          <br />
+          <label for="email">Email</label>
+          <input type="radio" name="method" value="email" id="email" />
+          <br />
+          <label for="phone">Phone</label>
+          <input type="radio" name="method" value="phone" id="phone" />
+          <br /><br />
+
+          <label>Reason for contacting us:</label>
+          <select>
+            <option value="Question">Question</option>
+            <option value="Inquiry">Inquiry</option>
+            <option value="Feedback">Feedback</option>
+          </select>
+          <br /><br />
+
+          <label>Upload a file:</label>
+          <input type="file" name="fileupload" />
+          <br /><br />
+
           <button type="submit">Send</button>
         </form>
       </section>
+
       <section>
         <h2>Location Map</h2>
         <iframe
@@ -74,6 +83,7 @@
         ></iframe>
       </section>
     </main>
+
     <footer>
       <p>Return to <a href="/Web/main.html">Home Page</a>.</p>
       <p>&copy; 2024 Local Library. All rights reserved.</p>
