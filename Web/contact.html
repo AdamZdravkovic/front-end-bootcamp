@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Contact</title>
+  </head>
+  <body>
+    <header>
+      <h1>Contact Us</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="/Web/main.html">Home</a></li>
+        <li><a href="/Web/catalog.html">Catalog</a></li>
+        <li><a href="/Web/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section>
+        <h2>Send Us a Message</h2>
+        <form action="/submit_form" method="GET">
+          <label>
+            Name: <input type="text" name="username" />
+          </label><br /><br />
+          <label>
+            Email: <input type="email" name="email" />
+          </label><br /><br />
+          <label>
+            Phone: <input type="number" name="contact" />
+          </label><br /><br />
+          <label>
+            Birthdate: <input type="date" name="birthdate" />
+          </label><br /><br />
+          <label>
+            Message: <br /><textarea rows="3" cols="30"></textarea>
+          </label><br /><br />
+          <label>
+            Subscribe to our newsletter? <input type="checkbox" name="subscribe" />
+          </label><br /><br />
+          
+          <label>
+            Preferred method of contact: <br />
+            <input type="radio" name="method" value="email" /> Email <br />
+            <input type="radio" name="method" value="phone" /> Phone
+          </label><br /><br />
+
+          <label>
+            Reason for contacting us: 
+            <select>
+              <option value="Question">Question</option>
+              <option value="Inquiry">Inquiry</option>
+              <option value="Feedback">Feedback</option>
+            </select>
+          </label><br /><br />
+          
+          <label>
+            Upload a file: <input type="file" name="fileupload" />
+          </label><br /><br />
+          
+          <button type="submit">Send</button>
+        </form>
+      </section>
+      <section>
+        <h2>Location Map</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6116.374618123085!2d-75.17104450000001!3d39.9595647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6c63338b01fff%3A0xd1f517ae2e3e3110!2sParkway%20Central%20Library!5e0!3m2!1sen!2sus!4v1733895608728!5m2!1sen!2sus"
+          width="400"
+          height="300"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </section>
+    </main>
+    <footer>
+      <p>Return to <a href="/Web/main.html">Home Page</a>.</p>
+      <p>&copy; 2024 Local Library. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
