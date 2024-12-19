@@ -162,15 +162,15 @@ console.log("Double all positive numbers", input);
 // Task 12
 
 var input1 = [4, 2, 2, -1, 6];
-var minValue = input1[0];
-var minIndex = 0;
+var minValue1 = input1[0];
+var minIndex1 = 0;
 
 for (var i = 0; i < input1.length; i++) {
-    if (input1[i] < minValue) {
-        minValue = input1[i];
-        minIndex = i;
+    if (input1[i] < minValue1) {
+        minValue1 = input1[i];
+        minIndex1 = i;
     };
 };
 
-console.log("Smallest number and its index:", minValue, ",", minIndex);
+console.log("Smallest number and its index:", minValue1, ",", minIndex1);
 
