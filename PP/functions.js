@@ -415,6 +415,148 @@ console.log(shortStringResult);
 // Task 22
 
 
+function convertArray (a) {
+    var result = [];
+
+    for (var i = 0; i < a.length; i++) {
+        if (typeof a[i] === "number") {
+            result[i] += a[i];
+        };
+    };
+
+    return result;
+};
+
+var convertArrayResult = convertArray(["56", "undefined", "Yes", "3e+5", Infinity]);
+console.log(convertArrayResult);
+
+
+// Task 23
+
+
+function retirement(a, b) {
+    if (a === "female") {
+        if (b > 0 && b < 60) {
+            var result = 60 - b;
+            return "You have " + result + " more years to retire.";
+        } else if (b >= 60) {
+            return "You're already retired!";
+        } else {
+            return "Invalid age input.";
+        }
+    } else if (a === "male") {
+        if (b > 0 && b < 65) {
+            var result = 65 - b;
+            return "You have " + result + " more years to retire.";
+        } else if (b >= 65) {
+            return "You're already retired!";
+        } else {
+            return "Invalid age input.";
+        }
+    } else {
+        return "Wrong input";
+    };
+};
+
+
+var retirementResult = retirement("male", 55);
+console.log(retirementResult); // "You have 10 more years to retired."
+
+
+// Task 24
+
+
+function humanizedNumber(a) {
+    if (a === 0) {
+        return a;
+    } else if (a % 100 >= 11 && a % 100 <= 13) {
+        return a + "th";
+    } else if (a % 10 === 1) {
+        return a + "st";
+    } else if (a % 10 === 2) {
+        return a + "nd";
+    } else if (a % 10 === 3) {
+        return a + "rd";
+    } else {
+        return a + "th";
+    }
+}
+
+var humanizedNumberResult = humanizedNumber(111);
+console.log("Humanized number is:", humanizedNumberResult);
+
+
+// Task 25
+
+
+function insertString(a, b, c) {
+    if (c === undefined || c === null) {
+        c = 0;
+    };
+
+    var result = "";
+
+    for (var i = 0; i < c; i++) {
+        result += a[i];
+    };
+
+    result += b;
+
+    for (var i = c; i < a.length; i++) {
+        result += a[i];
+    };
+
+    return result;
+}
+
+var insertStringResult = insertString("Today is a nice day.", "really ", 11);
+console.log(insertStringResult);
+
+
+// Task 26
+
+
+function arrayToString (a) {
+    var result = "";
+
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] !== undefined && a[i] !== null && !Number.isNaN(a[i]) && a[i] !== Infinity && a[i] !== "") {
+            result += a[i] + " ";
+        };
+    };
+
+    return result;
+};
+
+var arrayToStringResult = arrayToString([3, false, -22, undefined, 33, null, "", NaN]);
+console.log("The new string is:", arrayToStringResult);
+
+
+// Task 27
+
+
+function falsyValues(a) {
+    var result = [];
+
+    for (var i = 0; i < a.length; i++) {
+        if (a[i]) {
+            result[result.length] = a[i];
+        };
+    };
+
+    return result;
+};
+
+var falsyValuesResult = falsyValues([1, 'hello', '', 42, false, undefined, null, true, NaN]);
+console.log("Array with no falsy values:", falsyValuesResult);
+
+
+// Task 28
+
+
+function 
+
+
 
 
 
