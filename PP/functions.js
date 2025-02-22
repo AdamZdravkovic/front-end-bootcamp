@@ -932,6 +932,38 @@ var newArrayResult = newArray(78, 3, [2, -2, 33, 12, 5, 8]);
 console.log("New array:", newArrayResult);
 
 
+// Task 45
+
+
+function switchMaxMin(a) {
+    var minValue = a[0];
+    var maxValue = a[0];
+
+    var minIndex = 0;
+    var maxIndex = 0;
+
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] > maxValue) {
+            maxValue = a[i];
+            maxIndex = i;
+        }
+
+        if (a[i] < minValue) {
+            minValue = a[i];
+            minIndex = i;
+        };
+    };
+
+    a[minIndex] = maxValue;
+    a[maxIndex] = minValue;
+
+    return a;
+};
+
+var switchMaxMinResult = switchMaxMin([ 3, 500, 12, 149, 53, 414, 1, 19 ]);
+console.log("New switched array:", switchMaxMinResult);
+
+
 
 
 
