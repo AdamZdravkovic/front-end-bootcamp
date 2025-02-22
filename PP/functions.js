@@ -554,7 +554,429 @@ console.log("Array with no falsy values:", falsyValuesResult);
 // Task 28
 
 
-function 
+function reverseNumber(number) {
+    var numString = number + "";
+    var result = [];
+
+    for (var i = numString.length - 1; i >= 0; i--) {
+        result += numString[i];
+    };
+
+    return +result;
+};
+
+var reverseNumberResult = reverseNumber(78329);
+console.log("Result of reversed number:", reverseNumberResult);
+
+
+// Task 29
+
+
+function lastElement(arr, n) {
+    if (n === undefined) {
+        return arr[arr.length - 1];
+    };
+
+    var result = [];
+
+    for (var i = arr.length - n; i < arr.length; i++) {
+        result[result.length] = arr[i];
+    };
+
+    return result;
+};
+
+
+var lastElementResult = lastElement([7, 9, 0, -2], 2);
+console.log("Result of last element:", lastElementResult);
+
+
+// Task 30
+
+
+function preFilledArr (a, b) {
+    if (b === undefined) {
+        b = "null";
+    };
+
+   var result = [];
+   
+   for (i = 0; i < a; i++) {
+    result[result.length] = b;
+   };
+   return result;
+};
+
+var preFilledArrResult = preFilledArr(2, 5);
+console.log("Result of pre-filled array:", preFilledArrResult);
+
+
+// Task 31
+
+
+function perfectNum(number) {
+    if ( number <= 0) {
+        console.log ("Number is zero or below!");
+        return;
+    }
+
+    var sum = 0;
+
+    for (var i = 1; i < number; i++) {
+        if (number % i === 0 ) {
+        sum += i;
+    };
+};
+
+    if (sum === number ) {
+        return number + " is a perfect number";
+    } else {
+        return number + " is not a perfect number";
+    };
+};
+
+
+var perfectNumResult = perfectNum(28);
+console.log("Result of number:", perfectNumResult);
+
+
+// Task 32
+
+
+function findWord(string, word) {
+    var count = 0;
+    var container = "";
+
+    for (var i = 0; i <= string.length; i++) {
+        if (string[i] === " " || i === string.length) { 
+            if (container === word) {
+                count++;
+            }
+            container = "";
+        } else {
+            container += string[i];
+        };
+    };
+
+    return "'" + word + "' was found " + count + " times";
+};
+
+
+var findWordResult = findWord("The quick brown fox and small fox", "fox");
+console.log(findWordResult);
+
+
+// Task 33
+
+
+function hiddenEmail(email) {
+    var hiddenEmail = "";
+    var atIndex = -1;
+
+    for (var i = 0; i < email.length; i++) {
+        if (email[i] === "@") {
+            atIndex = i;
+            break;
+        };
+    };
+
+    for (var i = 0; i < email.length; i++) {
+        if (i < 3) {
+            hiddenEmail += email[i];
+        } else if (i === 3) {
+            hiddenEmail += "...";
+        } else if (i >= atIndex) {
+            hiddenEmail += email[i];
+    }
+    };
+
+    return hiddenEmail;
+};
+
+
+var hiddenEmailResult = hiddenEmail("myemailaddress@bgit.rs");
+console.log("Hidden email is:", hiddenEmailResult);
+
+
+// Task 34
+
+
+function findMostFrequent(array) {
+    var maxFrequency = 0;
+    var mostFrequentItem = null;
+    
+    for (var i = 0; i < array.length; i++) {
+        var currentFrequency = 0;
+
+        for (var j = 0; j < array.length; j++) {
+            if (array[i] === array[j]) {
+                currentFrequency++;
+            };
+        };
+
+        if (currentFrequency > maxFrequency) {
+            maxFrequency = currentFrequency;
+            mostFrequentItem = array[i];
+        };
+    };
+
+    return mostFrequentItem;
+};
+
+
+var findMostFrequentResult = findMostFrequent([3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]);
+console.log("The most frequent item is:", findMostFrequentResult);
+
+
+// Task 35
+
+
+function checkElement (e, a) {
+    var result = 'No';
+    for (var i = 0; i < a.length; i++) {
+        if (e === a[i]) {
+            result = 'Yes';
+        };
+    };
+    return result;
+};
+
+var checkElementResult = checkElement(1, [5, -4.2, 3, 7]);
+console.log("Does the element exist in the array?", checkElementResult);
+
+
+// Task 36
+
+
+function multiplyPositive (a) {
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] >= 0) {
+            a[i] = a[i] * 2;
+        };
+    };
+
+    return a;
+};
+
+var multiplyPositiveResult = multiplyPositive([-3, 11, 5, 3.4, -8]);
+console.log("A new array with multiplied positive numbers:", multiplyPositiveResult);
+
+
+// Task 37
+
+
+function findMin (a) {
+    var minValue = a[0];
+    var index = 0;
+
+    for (var i = 1; i < a.length; i++) {
+        if (a[i] < minValue) {
+            minValue = a[i];
+            index = i;
+        };
+    };
+
+    return minValue + " at index " + index;
+};
+
+var findMinResult = findMin([4, 2, 2, -1, 6]);
+console.log("Minimum value is", findMinResult);
+
+
+// Task 38
+
+
+function findSecondSmall(a) {
+    var smallest = a[0];
+    var secondSmallest = a[0];
+
+    for (var i = 1; i < a.length; i++) {
+        if (a[i] < smallest) {
+            secondSmallest = smallest;
+            smallest = a[i];
+        } else if (a[i] > smallest && (a[i] < secondSmallest || smallest === secondSmallest)) {
+            secondSmallest = a[i];
+        }
+    }
+
+    return secondSmallest;
+}
+
+var findSecondSmallResult = findSecondSmall([4, 2, 2, -1, 6]);
+console.log("Second smallest number:", findSecondSmallResult);
+
+
+// Task 39
+
+
+function positiveSum (a) {
+    var sum = 0;
+
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] >= 0) {
+            sum += a[i];
+        };
+    };
+
+    return sum;
+};
+
+var positiveSumResult = positiveSum([3, 11, -5, -3, 2]);
+console.log("Sum of positive elements:", positiveSumResult);
+
+
+// Task 40
+
+
+function isSymmetric(a) {
+    for (var i = 0; i < a.length / 2; i++) {
+        if (a[i] !== a[a.length - 1 - i]) {
+            return "isn't symmetric";
+        };
+    };
+    return "is symmetric";
+};
+
+var isSymmetricResult = isSymmetric([3, 4, 12, 8]);
+console.log("The array", isSymmetricResult);
+
+
+// Task 41
+
+
+function intertwineArrays(a, b) {
+    var intertwinedArray = [];
+    var index = 0;
+
+    for (var i = 0; i < a.length; i++) {
+        intertwinedArray[index] = a[i];
+        index++;
+        intertwinedArray[index] = b[i];
+        index++;
+    };
+
+    return intertwinedArray;
+};
+
+var intertwineArraysResult = intertwineArrays([4, 5, 6, 2], [3, 8, 11, 9]);
+console.log("Intertwined array:", intertwineArraysResult);
+
+
+// Task 42
+
+
+function concatenateArrays(a, b) {
+    var concatenatedArray = [];
+    var index = 0;
+
+    for (var i = 0; i < a.length; i++) {
+        concatenatedArray[index] = a[i];
+        index++;
+    };
+
+    for (var i = 0; i < b.length; i++) {
+        concatenatedArray[index] = b[i];
+        index++;
+    };
+
+    return concatenatedArray;
+};
+
+var concatenateArraysResult = concatenateArrays([4, 5, 6, 2], [3, 8, 11, 9]);
+console.log("Concatenated array:", concatenateArraysResult);
+
+
+// Task 43
+
+
+function deleteElement(a, b) {
+    var result = [];
+
+    for (var i = 0; i < b.length; i++) {
+        if (b[i] !== a) {
+            result[result.length] = b[i];
+        };
+    };
+
+    return result;
+};
+
+var deleteElementResult = deleteElement(2, [4, 6, 2, 8, 2, 2]);
+console.log("Output array:", deleteElementResult);
+
+
+// Task 44
+
+
+function newArray (e, p, a) {
+    if (p >= a.length) {
+        console.log("Position p is greater than array length!");
+    } else {
+        var newArray = [];
+    
+        for (var i = 0; i < p; i++) {
+            newArray[i] = a[i];
+        }
+    
+        newArray[p] = e;
+    
+        for (var i = p; i < a.length; i++) {
+            newArray[i + 1] = a[i];
+        }
+    };
+    
+    return newArray;
+};
+
+var newArrayResult = newArray(78, 3, [2, -2, 33, 12, 5, 8]);
+console.log("New array:", newArrayResult);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Task 1 Predefined Functions
+
+
+
 
 
 
