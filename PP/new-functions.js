@@ -79,7 +79,7 @@ function countVowels(a) {
   function celsiusToFahrenheit(a) {
     var fahrenheit = (a * 9/5) + 32;
     return fahrenheit;
-};``
+};
 
 var celsiusToFahrenheitResult = celsiusToFahrenheit(0);
 console.log(celsiusToFahrenheitResult, "°F");
