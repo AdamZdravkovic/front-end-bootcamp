@@ -964,56 +964,297 @@ var switchMaxMinResult = switchMaxMin([ 3, 500, 12, 149, 53, 414, 1, 19 ]);
 console.log("New switched array:", switchMaxMinResult);
 
 
+// Task 46
 
 
+function transformArray (a) {
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] <= 0) {
+            a[i] = 20;
+        } else {
+            a[i] = (a[i] / 2) + 5;
+        };
+    };
+    
+    return a;
+};
+
+var transformArrayResult = transformArray([ 3, 500, -10, 149, 53, 414, 1, 19 ]);
+console.log("Result of transformed array:", transformArrayResult);
 
 
+// Task 47
 
 
+function assignGrades(students, points) {
+    var result = "";
+    for (var i = 0, j = 0; i < students.length && j < points.length; i++, j++) {
+        if (points[j] >= 51 && points[j] <= 60) {
+            result += students[i] + " acquired " + points[j] + " points and earned 6.\n";
+        } else if (points[j] >= 61 && points[j] <= 70) {
+            result += students[i] + " acquired " + points[j] + " points and earned 7.\n";
+        } else if (points[j] >= 71 && points[j] <= 80) {
+            result += students[i] + " acquired " + points[j] + " points and earned 8.\n";
+        } else if (points[j] >= 81 && points[j] <= 90) {
+            result += students[i] + " acquired " + points[j] + " points and earned 9.\n";
+        } else if (points[j] >= 91 && points[j] <= 100) {
+            result += students[i] + " acquired " + points[j] + " points and earned 10.\n";
+        } else {
+            result += students[i] + " acquired " + points[j] + " points and failed to complete the exam.\n";
+        }
+    }
+    return result;
+};
+
+var assignGradesResult = assignGrades(
+    ["Micahel", "Anne", "Frank", "Joe", "John", "David", "Mark", "Bill"],
+    [50, 39, 63, 72, 99, 51, 83, 59]
+);
+console.log(assignGradesResult);
 
 
+// Task 48
 
 
+function addAndSubtract () {
+    var finalSum = 0;
+
+    for (var i = 1; i <= 1000; i++) {
+        if (i % 2 === 0) {
+            finalSum += i;
+        };
+    };
+
+    for (var j = 1; j <= 500; j++) {
+        if (j % 2 !== 0) {
+            finalSum -= j;
+        };
+    };
+
+    finalSum *= 12.5;
+    return finalSum;
+};
+
+console.log("Result is:", addAndSubtract());
 
 
+// Task 49
 
 
+function twoLetterString(a) {
+    var result = "";
+
+    for (var i = 0; i < a.length; i++) {
+        if (typeof a[i] === "string" && a[i].length >= 2) {
+            result += a[i][0] + a[i][1];
+        };
+    };
+
+    return result;
+};
+
+var twoLetterStringResult = twoLetterString([ "M", "Anne", 12, "Steve", "Joe", "John", "David", "Mark", true, "A" ]);
+console.log("Two letter string:", twoLetterStringResult);
 
 
+// Task 50
 
 
+function reversedString (a) {
+    var result = "";
+
+    for (var i = a.length - 1; i >= 0; i--) {
+        result += a[i];
+    };
+
+    return result;
+};
+
+var reversedStringResult = reversedString("Belgrade Institute of Technology");
+console.log("Output of reversed string:", reversedStringResult);
 
 
+// Task 51
 
 
+function generateCombinations() {
+    var count = 0;
+
+    for (var i = 1; i <= 7; i++) { 
+        for (var j = i + 1; j <= 7; j++) { 
+            console.log(i, j);
+            count++;
+        };
+    };
+
+    return count;
+};
+
+var generateCombinationsResult = generateCombinations(7);
+console.log("Total combinations:", generateCombinationsResult);
 
 
+// Task 52
 
 
+function isPrime(a) {
+    if (a <= 1) {
+        return false;
+    };
+
+    for (var i = 2; i < a; i++) {
+        if (a % i === 0) {
+            return false;
+        };
+    };
+
+    return true;
+};
+
+var isPrimeResult = isPrime(17);
+console.log("Is this number a prime number?", isPrimeResult);
 
 
+// Task 53
 
 
+function palindrome (a) {
+    var newString = "";
+    var oldString = "";
+
+    for (var i = a.length - 1; i >= 0; i--) {
+        if (a[i] !== " ") {
+            newString += a[i];
+        };
+    };
+
+    for (var j = 0; j < a.length; j++) {
+        if (a[j] !== " ") {
+            oldString += a[j];
+        };
+    };
+
+    if (newString === oldString) {
+        return true;
+    } else {
+        return false;
+    };
+};
+
+var palindromeResult = palindrome("a nut for a jar of tuna");
+console.log("Is this palindrome?", palindromeResult);
 
 
+// Task 54
 
 
+function commonDivisor(a, b) {
+    var divisor = 1;
 
+    for (var i = 1; i <= a && i <= b; i++) {
+        if (a % i === 0 && b % i === 0) {
+            divisor = i;
+        };
+    };
 
+    return divisor;
+};
 
-
-
+var commonDivisorResult = commonDivisor(192, 42);
+console.log("Greatest divisor is:", commonDivisorResult);
 
 
 // Task 1 Predefined Functions
 
 
+function convertToNumbers(a) {
+    var result = [];
+
+    for (var i = 0; i < a.length; i++) {
+        var num = parseFloat(a[i]);
+        if (!isNaN(num) && isFinite(num)) {
+            result.push(num);
+        };
+    };
+
+    return result;
+}
+
+var convertToNumbersResult = convertToNumbers(["1", "21", undefined, "42", "1e+3", Infinity]);
+console.log("The result of converted numbers:", convertToNumbersResult);
 
 
+// Task 2
 
 
+function arrayIntoString (a) {
+    var result = "";
+
+    for (var i = 0; i <= a.length; i++) {
+        if (!isNaN(a[i]) && isFinite(a[i]) && a[i] !== null && a[i] !== undefined) {
+            result += a[i];
+        };
+    };
+
+    return result;
+};
+
+var arrayIntoStringResult = arrayIntoString([NaN, 0, 15, false, -22, '', undefined, 47, null]);
+console.log("Array into string result:", arrayIntoStringResult);
 
 
+// Task 3
 
 
+function filteredArray(a) {
+    var result = [];
 
+    for (var i = 0; i < a.length; i++) {
+        if (a[i]) {
+            result.push(a[i]);
+        };
+    };
+
+    return result;
+};
+
+var filteredArrayResult = filteredArray([NaN, 0, 15, false, -22, '', undefined, 47, null]);
+console.log("Result of filtered array:", filteredArrayResult);
+
+
+// Task 4
+
+
+function countInteger (a) {
+    var count = 0;
+
+    for (var i = 0; i <= a.length; i++) {
+        if (Number.isInteger(a[i])) {
+            count++;
+        };
+    };
+
+    return count;
+};
+
+var countIntegerResult = countInteger([NaN, 23.1, 15, false, -22.5, '', 4, 7, null]);
+console.log("The number of integer values:", countIntegerResult);
+
+
+// Task 5
+
+
+function floatCount(a) {
+    var count = 0;
+
+    for (var i = 0; i < a.length; i++) {
+        if (typeof a[i] === 'number' && !Number.isInteger(a[i])) {
+            count++;
+        };
+    };
+
+    return count;
+};
+
+var floatCountResult = floatCount([NaN, 23.1, 15, false, -22.5, '', 4, 7, null]);
+console.log("The number of float values:", floatCountResult);``
