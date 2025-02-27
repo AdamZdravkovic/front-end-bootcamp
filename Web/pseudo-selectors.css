@@ -1,0 +1,36 @@
+ul li:first-child {
+    font-weight: bold;
+}
+
+ul li:last-child {
+    font-style: italic;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #DFFF00;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p::first-letter {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+p::before {
+    content: "Important:";
+}
+
+button:hover {
+    background-color: #ff0000;
+}
+
+button:active {
+    background-color: #D3D3D3;
+}
