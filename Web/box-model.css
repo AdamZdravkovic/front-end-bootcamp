@@ -1,0 +1,74 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+* {
+    margin: 0;
+  }
+
+@font-face {
+    font-family: "My new style";
+    src: url(fonts/Lato-Light.ttf);
+}
+
+.yellow-bg {
+    background-color: #FFFF00;
+    width: 400px;
+    height: 500px;
+    max-width: 300px;
+    overflow: hidden;
+  }
+  
+  .red-bg {
+    background-color: #FF0000;
+    width: 600px;
+    height: 300px;
+    max-height: 200px;
+    overflow: hidden;
+  }
+  
+ p {
+    background-color: #FFFF00;
+    padding: 10px;
+  }
+  
+  .red-dashed {
+    border: 5px dashed #FF0000;
+    padding: 50px;
+  }
+  
+  .green-solid {
+    border: 5px solid #008000;
+    width: 400px;
+    margin-right: 20px;
+    display: none;
+    padding: 0;
+
+  }
+  
+  .first-dashed {
+    width: 300px;
+    margin: 50px;
+    display: inline-block;
+    margin-right: 20px;
+    padding: 0;
+  }
+
+  .second-dashed {
+    width: 200px;
+    margin-left: 100px;
+    display: none;
+    margin-right: 20px;
+    padding: 0;
+}
+
+.main-title {
+    text-align: center;
+    font-family: "My new style", Arial, sans-serif;
+    border-radius: 5px 15px;
+    width: 960px;
+    margin: 0 auto;
+    background-color: #DEB887;
+    color: #FFF8DC;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+}
