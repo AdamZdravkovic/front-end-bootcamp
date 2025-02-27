@@ -95,7 +95,7 @@ function multiplication() {
 
       for (var j = 1; j <= 12; j++) {
           row += (i * j) + "\t";
-      }
+      };
 
       result += row + "\n";
     };
@@ -221,8 +221,7 @@ const firstMiddleLast = function (a) {
   };
 
   if (a.length % 2 !== 0) {
-    let middle = a[Math.floor(a.length / 2)];
-    return "First, middle and last element: " + a[0] + ", " + middle + " and " + a[a.length -1];
+    return "First, middle and last element: " + a[0] + ", " + a[Math.floor(a.length / 2)] + " and " + a[a.length -1];
   } else {
     return "First and last element: " + a[0] + ", " + a[a.length - 1];
   };
