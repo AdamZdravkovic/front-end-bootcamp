@@ -210,3 +210,22 @@ const mostFreq = function (a) {
 };
 
 console.log(mostFreq([1, 2, 3, 2, 2, 4, 1, 1, 1]));
+
+
+// Task 11
+
+
+const firstMiddleLast = function (a) {
+  if (a.length === 0) {
+    return a;
+  };
+
+  if (a.length % 2 !== 0) {
+    let middle = a[Math.floor(a.length / 2)];
+    return "First, middle and last element: " + a[0] + ", " + middle + " and " + a[a.length -1];
+  } else {
+    return "First and last element: " + a[0] + ", " + a[a.length - 1];
+  };
+};
+
+console.log(firstMiddleLast([10, 20, 30, 40, 50]));
