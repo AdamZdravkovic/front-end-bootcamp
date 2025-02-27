@@ -42,13 +42,13 @@ function countVowels(a) {
   };
 
   var combineArraysResult = combineArrays(['a','b','c'], [1,2,3]);
-  console.log("Combine two arrays:", combineArraysResult);
+  console.log("Combined two arrays:", combineArraysResult);
 
 
   // Task 3
 
 
-  function rotateArray(a, b) {
+  function rotateArray (a, b) {
     var rotated = [];
   
     for (let i = b; i < a.length; i++) {
@@ -69,11 +69,43 @@ function countVowels(a) {
   // Task 4
   
   
-  
+  function convertToArray (a) {
+    var result = [];
+    var numberString = a + "";
+
+    for (var i = 0; i < numberString.length; i++) {
+      result[result.length] = numberString[i];
+    };
+
+    return result;
+  };
+
+  var convertToArrayResult = convertToArray(12345);
+  console.log("Number to an array of digits:", convertToArrayResult);
 
 
+// Task 5
 
-  // Task 6
+
+  function multiplication() {
+    var result = "";
+
+    for (var i = 1; i <= 12; i++) {
+        var row = "";
+
+        for (var j = 1; j <= 12; j++) {
+            row += (i * j) + "\t";
+        }
+
+        result += row + "\n";
+
+    return "Multiplication result: " + result;
+};
+
+console.log(multiplication());
+
+
+// Task 6
 
 
   function celsiusToFahrenheit(a) {
@@ -82,4 +114,24 @@ function countVowels(a) {
 };
 
 var celsiusToFahrenheitResult = celsiusToFahrenheit(0);
-console.log(celsiusToFahrenheitResult, "°F");
+console.log("Converted value:", celsiusToFahrenheitResult, "°F");
+
+
+// Task 7
+
+
+const biggestNumber = function (a) {
+  let count = -Infinity;
+
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== undefined && a[i] !== null && !isNaN(a[i]) && isFinite(a[i])) {
+      if (a[i] > count) {
+        count = a[i];
+      }
+    }
+  }
+
+  return count;
+};
+
+console.log(biggestNumber([4, 8, "hello", 15, undefined, 23, null, 42]));
