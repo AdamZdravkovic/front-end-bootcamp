@@ -228,3 +228,73 @@ const firstMiddleLast = function (a) {
 };
 
 console.log(firstMiddleLast([10, 20, 30, 40, 50]));
+
+
+// Task 12
+
+
+const average = function (...a) {
+  let result = 0;
+
+  for (let i = 0; i < a.length; i++) {
+    result += a[i];
+  };
+
+  let finalResult = result / a.length;
+  return "The average of A elements: " + finalResult;
+};
+
+console.log(average(10, 20, 30, 40));
+
+
+// Task 13
+
+
+const greaterThanAverage = function (a) {
+  let averageCount = 0;
+
+  for (let i = 0; i < a.length; i++) {
+    averageCount += a[i];
+  };
+
+  let average = averageCount / a.length;
+  let biggerThanAverage = [];
+
+  for (let j = 0; j < a.length; j++) {
+    if (a[j] > average) {
+    biggerThanAverage[biggerThanAverage.length] = a[j];
+  };
+};
+
+  return "The numbers greater than average: " + biggerThanAverage;
+};
+
+console.log(greaterThanAverage([10, 20, 30, 40, 50]));
+
+
+// Task 14
+
+
+const bodyMassIndex = function (weight, height) {
+  const result = weight / (height * height);
+
+  if (result < 15) {
+    return "Starvation";
+  } else if (result < 17.5) {
+    return "Anorexic";
+  } else if (result < 18.5) {
+    return "Underweight";
+  } else if (result >= 18.5 && result < 25) {
+    return "Ideal";
+  } else if (result >= 25 && result < 30) {
+    return "Overweight";
+  } else if (result >= 30 && result < 40) {
+    return "Obese";
+  } else if (result >= 40) {
+    return "Morbidly Obese";
+  } else {
+    return "Wrong inputs";
+  };
+};
+
+console.log(bodyMassIndex(70, 1.75));
