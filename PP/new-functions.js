@@ -298,3 +298,41 @@ const bodyMassIndex = function (weight, height) {
 };
 
 console.log(bodyMassIndex(70, 1.75));
+
+
+// Task 15
+
+
+const stringFrame = function (a) {
+  let maxLength = 0;
+
+  for (let i = 0; i < a.length; i++) {
+    if (a[i].length > maxLength) {
+      maxLength = a[i].length;
+    };
+  };
+
+  let border = "";
+  for (let i = 0; i < maxLength + 4; i++) {
+    border += "*";
+  };
+
+  let result = border + "\n";
+
+  for (let j = 0; j < a.length; j++) {
+    let row = "* " + a[j];
+    let emptySpace = maxLength - a[j].length;
+
+    for (let k = 0; k < emptySpace; k++) {
+      row += " ";
+    };
+
+    row += " *";
+    result += row + "\n";
+  };
+
+  result += border;
+  return result;
+};
+
+console.log(stringFrame(["Hello", "World", "in", "a", "frame"]));
