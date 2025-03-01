@@ -336,3 +336,60 @@ const stringFrame = function (a) {
 };
 
 console.log(stringFrame(["Hello", "World", "in", "a", "frame"]));
+
+
+// Task 16
+
+
+const fortuneTeller = function (amount, name, location, job) {
+  return "You will be a " + job + " in " + location + ", and married to " + name + " with " + amount + " kids.";
+};
+
+console.log(fortuneTeller(2, "Alice", "New York", "Software Engineer"));
+
+
+// Task 17
+
+
+const dogYears = function (a, b = 7) {
+  return "Your doggie is " + (a * b) + " years old in dog years!";
+};
+
+console.log(dogYears(2, 6));
+
+
+// Task 18
+
+
+const calculateSupply = function (a, b) {
+  const total = (100 - a) * (b * 365);
+  return "You will need " + Math.round(total) + " units to last you until the ripe old age of 100.";
+};
+
+console.log(calculateSupply(40, 2.3));
+
+
+// Task 19
+
+
+const celsiusToFahrenheitNew = function (a) {
+  let celsius = a;
+  let fahrenheit = celsius * 9/5 + 32;
+
+  return celsius + "°C is " + fahrenheit + "°F";
+};
+
+console.log(celsiusToFahrenheitNew(100));
+
+
+// Task 20
+
+
+const fahrenheitToCelsius = function (a) {
+  let fahrenheit = a;
+  let celsius = (fahrenheit - 32) * 5/9;
+
+  return fahrenheit + "°F is " + celsius + "°C";
+};
+
+console.log(fahrenheitToCelsius(50));
