@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Layout</title>
+        <link rel="stylesheet" href="layout.css">
+    </head>
+    <body>
+
+
+        <nav class="position-fixed">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <header class="position-sticky">
+            <h1>Sticky Header</h1>
+        </header>
+
+
+        <div class="content">
+            <section>
+                <h1>Welcome to the Website</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet libero metus. Integer at magna eu felis hendrerit tincidunt. Phasellus viverra purus purus, eu fermentum leo pellentesque et. Vivamus tincidunt suscipit dui ut bibendum. Nulla facilisi. Sed non est volutpat, suscipit purus sit amet, vestibulum orci. Cras varius erat nec elit condimentum, in condimentum nulla fermentum. Donec auctor nisi eget lectus volutpat, at sodales erat varius. Pellentesque scelerisque nisi sapien, ac efficitur lectus mollis ac.</p>
+            </section>
+            
+            <section>
+                <h2>About Us</h2>
+                <p>Curabitur facilisis auctor turpis, euismod convallis nisl gravida non. Vestibulum sit amet lacinia nisl. Vivamus gravida leo ut libero volutpat vehicula. Aenean quis orci felis. Integer ut lorem a metus volutpat convallis non eu leo. Suspendisse potenti. Curabitur placerat erat at est dapibus malesuada. Nulla tristique suscipit ante sit amet placerat. Integer id sapien ipsum. Sed pretium felis a purus dictum tincidunt. Suspendisse vel tortor et erat tincidunt lobortis. Fusce faucibus viverra libero, id malesuada arcu dapibus ac.</p>
+                <p>Nullam feugiat leo sit amet purus lacinia, sit amet fringilla tortor fermentum. Phasellus vehicula viverra lectus, et convallis enim congue vitae. Sed pretium hendrerit ante, eget facilisis nulla lobortis ac. Morbi scelerisque leo felis, sed facilisis velit gravida sit amet. Vestibulum vitae metus lectus. Nulla sollicitudin, risus sit amet eleifend scelerisque, sem erat tristique urna, vitae hendrerit augue augue ut eros. Aliquam erat volutpat. Donec malesuada vestibulum purus.</p>
+            </section>
+            
+            <section>
+                <h2>Services</h2>
+                <p>Praesent placerat neque non nunc aliquet, ut gravida risus pellentesque. Nam nec ante odio. Integer rutrum gravida sem, et sollicitudin nisi iaculis eu. Quisque hendrerit dui ut enim rhoncus, vel suscipit purus feugiat. Ut ac enim orci. Fusce tincidunt eros at orci condimentum tempus. Donec sed suscipit eros, ac mollis elit. Curabitur et interdum leo, et tincidunt est. Morbi volutpat tortor risus, eu egestas nisl iaculis id. Integer sollicitudin odio sed risus congue, eget vehicula erat feugiat.</p>
+                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer ut ante in augue consequat scelerisque. Nulla vel risus sit amet odio scelerisque placerat eget vitae erat. Fusce ut consectetur ante. Fusce placerat mi sed nisi tempor, sed hendrerit risus mollis. Sed iaculis nisi vel purus convallis lacinia. In luctus malesuada dolor, vitae feugiat arcu malesuada ac. Proin placerat libero vel ante fermentum dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            </section>
+    
+            <section>
+                <h2>Contact Us</h2>
+                <p>Aenean at diam sit amet sapien lobortis tempus. Integer sit amet egestas justo. Sed et sapien interdum, ullamcorper odio id, hendrerit orci. Ut ac dictum augue. Vestibulum ac elit et metus varius dapibus. Integer id placerat dui. Sed vestibulum nisl magna, ac lacinia nulla cursus in. Phasellus in sollicitudin ante, non facilisis metus. Ut malesuada massa at orci vestibulum fermentum. Sed sollicitudin sem non odio efficitur, ut elementum odio consequat.</p>
+                <p>Phasellus pellentesque tristique magna. Cras egestas bibendum urna, sit amet interdum metus sollicitudin ac. Nulla accumsan dolor nec egestas tristique. Integer mollis velit purus, non convallis metus tincidunt a. Suspendisse potenti. Etiam vestibulum diam ac neque malesuada gravida. Integer a nisl non risus feugiat ultricies non at eros. Aliquam sit amet orci a eros feugiat dapibus a sit amet sapien. Nunc ac sollicitudin ipsum. Curabitur vehicula nulla quam, eget vulputate dui tincidunt eu. Nulla facilisi.</p>
+            </section>
+    
+            <section>
+                <h2>More Information</h2>
+                <p>Phasellus congue orci in ex efficitur, et congue neque sollicitudin. Integer in est non libero efficitur scelerisque. Pellentesque non vestibulum felis. Quisque consequat nibh non quam luctus, sit amet vestibulum lectus tristique. Etiam feugiat tempus augue, eu cursus sem hendrerit ac. Nam finibus orci ut justo gravida ullamcorper. Aenean cursus nisl ut fermentum pretium. Etiam et dolor a purus rutrum placerat. Nam quis urna in eros tincidunt sodales at eu ligula. Sed in nisl orci. Proin vehicula, lorem at euismod luctus, arcu nisi aliquet metus, non fermentum sem neque vitae augue.</p>
+            </section>
+        </div>
+
+        <div class="position-relative container">
+            <div class="position-absolute">Absolute Box</div>
+        </div>
+
+        <div class="position-center">
+            <p>Centered Content</p>
+        </div>
+
+        <div class="z-index-low">Behind</div>
+        <div class="z-index-high">Front</div>
+
+        <button class="tooltip-button">Hover over me</button>
+        <div class="tooltip-content">This is a tooltip</div>
+
+        <p class="z-index-text">This text is behind the image</p>
+        <img class="z-index-image" src="img/library.jpg">
+    </body>
+</html>

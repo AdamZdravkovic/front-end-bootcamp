@@ -1,0 +1,81 @@
+.position-fixed {
+    position: fixed;
+    top: 0;
+    margin-top: 20px;
+}
+
+.content {
+    margin-top: 50px;
+}
+
+.position-sticky {
+    position: sticky;
+    top: 0;
+    margin-top: 95px;
+    background-color: burlywood;
+}
+
+.position-relative.container {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+    
+}
+
+.position-center {
+    position: relative;
+}
+
+.position-center p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+}
+
+.z-index-low {
+    position: absolute;
+    top: 1100px;
+    left: 100px;
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+    z-index: 1;
+}
+
+.z-index-high {
+    position: absolute;
+    top: 1150px;
+    left: 150px;
+    width: 200px;
+    height: 200px;
+    background-color: lightcoral;
+    z-index: 2;
+}
+
+.tooltip-content {
+    position: absolute;
+    top: 1400px;
+    visibility: hidden;
+}
+
+.tooltip-button {
+    position: absolute;
+    top: 1450px;
+}
+
+.tooltip-button:hover + .tooltip-content {
+    visibility: visible;
+}
+
+.z-index-text {
+    position: absolute;
+    top: 1650px;
+}
+
+.z-index-image {
+    position: absolute;
+    top: 1550px;
+}
