@@ -1,0 +1,39 @@
+.float-sidebar {
+    float: left;
+}
+
+.float-column-left {
+    width: 30%;
+    float: left;
+}
+
+.float-column-right {
+    width: 70%;
+    float: right;
+}
+
+.float-right {
+    float: right;
+}
+
+p {
+    float: right;
+}
+
+.float-box {
+    float: left;
+    margin-top: 200px;
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    margin-right: 10px;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+
+
