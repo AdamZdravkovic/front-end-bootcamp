@@ -1,0 +1,89 @@
+.first-ul {
+    list-style-type: circle;
+}
+
+.second-ul {
+    list-style-type: square;
+}
+
+.first-ol {
+    list-style-type: upper-alpha;
+}
+
+.second-ol {
+    list-style-type: upper-roman;
+}
+
+.last-lists {
+    list-style-image: url("./Web/img/featured.png");
+    width: 200px;
+    border: 1px solid;
+}
+
+.fourth-ul {
+    list-style-position: inside;
+}
+
+.img-iphone {
+    width: 80px;
+    height: 60px;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+thead {
+    color: red;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid rosybrown;
+    text-align: left;
+}
+
+tr:hover {
+    background-color: yellow;
+}
+
+tr:hover .second-phone {
+    background-color: yellow;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: gray;
+}
+
+label {
+    width: 50px;
+    margin-right: 10px;
+}
+
+input {
+    padding: 3px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 5px;
+    border: 2px solid gold;
+    border-radius: 5px;
+    background-color: greenyellow;
+    color: red;
+}
+
+input:hover {
+    cursor: move;
+}
+
+button:hover {
+    cursor: url("/Web/img/featured.png");
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lists/Tables/Forms</title>
+        <link rel="stylesheet" href="lists-tables-forms.css">
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+    </head>
+    <body>
+        <div>
+            <ul class="first-ul">
+                <li>Wake up at 8 AM</li>
+                <li>Exercise for 30 minutes</li>
+                <li>Have breakfast</li>
+                <li>Start work at 10 AM</li>
+                <li>Read a book before bed</li>
+            </ul>
+            <ul class="second-ul">
+                <li>Painting</li>
+                <li>Sculpting</li>
+                <li>Soccer</li>
+                <li>Basketball</li>
+            </ul>
+            <ol class="first-ol">
+                <li>1 cup flour</li>
+                <li>4 tbsp sugar</li>
+                <li>5 tsp baking powder</li>
+                <li>3 cup milk</li>
+                <li>6 egg</li>
+                <li>Butter for cooking</li>
+            </ol>
+            <ol class="second-ol">
+                <li>Learn JavaScript</li>
+                <li>Read 20 books</li>
+                <li>Start a blog</li>
+                <li>Save money for a vacation</li>
+                <li>Exercise regularly</li>
+            </ol>
+        </div>
+        <div class="last-lists">
+            <ul class="third-ul">
+                <li>Complete the very important and urgent project due by end of the week</li>
+                <li>Schedule a meeting with the design team to discuss new ideas</li>
+                <li>Review the final draft of the client proposal and submit feedback</li>
+            </ul>
+            <ul class="fourth-ul">
+                <li>"The Art of Clear Thinking: How to Organize Your Mind and Focus on What Matters"</li>
+                <li>"Mastering CSS: Advanced Techniques for Modern Web Design"</li>
+                <li>"JavaScript from Zero to Hero: A Beginner's Guide to Coding"</li>
+            </ul>
+        </div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                        <th>Product Page</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Apple</td>
+                        <td>Iphone 16 Pro</td>
+                        <td>$999</td>
+                        <td><img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-16-pro-model-unselect-gallery-1-202409?wid=5120&hei=2880&fmt=webp&qlt=70&.v=aWs5czA5aDFXU0FlMGFGRlpYRXk2UWFRQXQ2R0JQTk5udUZxTkR3ZVlpTEJnOG9obkp6NERCS3lnVm1tcnlVUjBoUVhuTWlrY2hIK090ZGZZbk9HeE1xUVVnSHY5eU9CcGxDMkFhalkvT0NuWUpOMGpEMHVTZEtYYVA3c1B3UzVmbW94YnYxc1YvNXZ4emJGL0IxNFp3&traceId=1" class="img-iphone"></td>
+                        <td><a href="https://www.apple.com/shop/buy-iphone/iphone-16-pro" target="_blank">Iphone Link</a></td>
+                    </tr>
+                    <tr>
+                        <td>Google</td>
+                        <td>Pixel 8 Pro</td>
+                        <td>$899</td>
+                        <td><img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/79ae5c06-6ad9-4fe6-9cb3-84b180b2e637.jpg;maxHeight=640;maxWidth=550;format=webp" class="img-iphone second-phone"></td>
+                        <td><a href="https://www.bestbuy.com/site/google-pixel-9-pro-128gb-unlocked-obsidian/6587887.p?skuId=6587887&contractId=unactivated&ref=212&loc=1&utm_source=feed&extStoreId=118&gStoreCode=118&gQT=2" target="_blank">Pixel Link</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+    
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>
