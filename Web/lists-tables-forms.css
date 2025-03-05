@@ -15,7 +15,7 @@
 }
 
 .last-lists {
-    list-style-image: url("./Web/img/featured.png");
+    list-style-image: url('./img/featured.png');
     width: 200px;
     border: 1px solid;
 }
@@ -85,5 +85,5 @@ input:hover {
 }
 
 button:hover {
-    cursor: url("/Web/img/featured.png");
+    cursor: url("./img/featured.png"), auto;
 }
