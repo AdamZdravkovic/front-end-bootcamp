@@ -70,5 +70,44 @@ function decValue (a) {
 
 const decValueResult = decValue(34);
 decValueResult();
+console.log("Presek");
+
+
+// Task 6
+
+
+function validatePassword(password, successCallback, errorCallback) {
+    if (password.length < 6) {
+      errorCallback("Password must be at least 6 characters long.");
+      return;
+    }
+  
+    let hasDigit = false;
+    for (let i = 0; i < password.length; i++) {
+      if (password[i] >= '0' && password[i] <= '9') {
+        hasDigit = true;
+        break;
+      }
+    }
+  
+    if (hasDigit) {
+      successCallback("Password is valid.");
+    } else {
+      errorCallback("Password must contain at least one digit.");
+    }
+  }
+  
+  function successCallback(message) {
+    console.log(message);
+  }
+  
+  function errorCallback(message) {
+    console.log(message);
+  }
+  
+  validatePassword("JSGuru9", successCallback, errorCallback);
+
+
+// Task 7
 
 
