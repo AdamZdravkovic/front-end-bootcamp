@@ -108,6 +108,55 @@ function validatePassword(password, successCallback, errorCallback) {
   validatePassword("JSGuru9", successCallback, errorCallback);
 
 
-// Task 7
+// // Task 7
 
 
+// function filterArray (array, isOdd) {
+//     isOdd(callback);
+
+
+
+
+//     function callback () {
+//         let newArr = [];
+
+//         for (let i = 0; i < array.length; i++) {
+//             if (array[i] % 2 !== 0) {
+//                 newArr.push(array[i]);
+//             }
+
+//             console.log(newArr);
+//         }
+//     }
+// }
+
+// console.log(filterArray([2, 8, 11, 4, 9, 3], isOdd));
+
+
+/// Task 8
+
+function hasFive (string, callback) {
+    
+
+    for (let i = 0; i < string.length; i++) {
+        if (callback(string[i])) {
+            return true;
+        } 
+    }
+
+
+    function checkNumber(num) {
+        if (num === "5") {
+            console.log(true);
+            return true;
+        } else {
+            console.log(false);
+            return false;
+        }
+    }
+
+}
+
+
+
+console.log(hasFive("Adam5Adam", checkNumber));
