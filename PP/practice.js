@@ -49,40 +49,42 @@ const map = function (arr, cb) {
 
 
   console.log(concatenateStrings(["Hello", "world", "from", "JavaScript"], joinStrings));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
+
+  // Task 3
+  // Filter numbers array with starting with index "startIndex" and multiply with 2 and return new modified numbers array
+
+
+  function reduce (arr, cb, startIndex) {
+    if (typeof startIndex !== "number" || typeof startIndex === "function") {
+      startIndex = 2;
+    };
+  
+    if (typeof callback !== "function") {
+      return "You don't have a callback!";
+    };
+  
+  
+    let temp = []
+  
+  
+    for (let i = startIndex; i < arr.length; i++) {
+       temp[temp.length] = cb(arr[i]);
+    };
+  
+  
+    arr = temp;
+    return arr;
+  
+  };
+  
+  
+  const callback = function (num) {
+    return num * 2;
+  };
+  
+  
+  let numbers = [3, 5, 2, 6, 2];
+  
+  
+  console.log(reduce(numbers, callback, 3));
