@@ -45,9 +45,6 @@ const map = function (arr, cb) {
   }
 
 
-
-
-
   console.log(concatenateStrings(["Hello", "world", "from", "JavaScript"], joinStrings));
   
 
@@ -64,21 +61,16 @@ const map = function (arr, cb) {
       return "You don't have a callback!";
     };
   
-  
-    let temp = []
-  
+    let temp = [];
   
     for (let i = startIndex; i < arr.length; i++) {
        temp[temp.length] = cb(arr[i]);
     };
   
-  
     arr = temp;
     return arr;
-  
   };
-  
-  
+
   const callback = function (num) {
     return num * 2;
   };
@@ -88,3 +80,34 @@ const map = function (arr, cb) {
   
   
   console.log(reduce(numbers, callback, 3));
+
+  
+// Task 4 Find Maximum or Minimum Number in Array
+// Write a function findMax or findMin that takes an array of numbers and a callback function. The callback should return the maximum or minimum number in the array
+
+
+function compare(arr, callback) {
+  let result = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    result = callback(arr[i], result);
+  };
+
+  return result;
+};
+
+function minCheck(num, min) {
+  if (num < min) {
+    min = num;
+  };
+  return min;
+};
+
+function maxCheck(num, max) {
+  if (num > max) {
+    max = num;
+  }
+  return max;
+};
+
+console.log(compare([5, 3, 8, 1], minCheck));
