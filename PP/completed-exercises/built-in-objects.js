@@ -302,3 +302,156 @@ const randomArray = function(callback, count) {
 };
 
 console.log("Task 22-24: ", randomArray(random5to20, 4));
+
+
+// Task 25
+
+
+const arrayExample = ['car', 'roof', 'pool', 'street', 'sky'];
+
+const shuffle = function () {
+    const original = arrayExample.slice();
+    const shuffled = [];
+
+    for (let i = 0; i < arrayExample.length; i++) {
+        const randomIndex = Math.floor(Math.random() * original.length);
+        const removed = original.splice(randomIndex, 1)[0];
+        shuffled.push(removed);
+    };
+
+    return shuffled;
+};
+
+console.log("Task 25: ", shuffle(arrayExample));
+
+
+// Task 26
+
+
+const reversedExample = 12345;
+
+const reversed = function() {
+    return parseInt(reversedExample.toString().split("").reverse().join(""));
+};
+
+console.log("Task 26: ", reversed());
+
+
+// Task 27
+
+
+const stringExample = "Going to New York City";
+
+const alphaString = function() {
+    return stringExample.replace(/[^a-z]/gi, '').toLowerCase().split("").sort().join("");
+};
+
+console.log("Task 27: ", alphaString());
+
+
+// Task 28
+
+
+const alphaStringSentence = function() {
+    return stringExample.split(" ").map(word => word.split("").sort().join("")).join(" ");
+};
+
+console.log("Task 28: ", alphaStringSentence());
+
+
+// Task 29
+
+
+const splitWords = function () {
+    return stringExample.split(" ");
+};
+
+console.log("Task 29: ", splitWords());
+
+
+// Task 30
+
+
+const abbExample = "John Snow";
+
+const abbForm = function () {
+    const words = abbExample.split(" ");
+    return words[0] + " " + words[1][0] + ".";
+};
+
+console.log("Task 30: ", abbForm());
+
+
+// Task 31
+
+
+const start1 = '0000';
+const end1 = '123';
+const direction1 = 'l';
+
+const start2 = '00000000';
+const end2 = '123';
+const direction2 = 'r';
+
+const leftOrRight = function (start, end, direction) {
+    const startLength = start.length;
+    const endLength = end.length;
+    const remaining = startLength - endLength;
+
+    if (direction === "l") {
+        return start.slice(0, remaining) + end;
+    } else if (direction === "r") {
+        return end + start.slice(endLength);
+    };
+};
+
+const result1 = leftOrRight(start1, end1, direction1);
+const result2 = leftOrRight(start2, end2, direction2);
+
+console.log("Task 31: ", result1, result2);
+
+
+// Task 32
+
+
+const inputExample = "the city is ancient";
+
+const capitalize = function () {
+    return inputExample.charAt(0).toUpperCase() + inputExample.slice(1);
+};
+
+console.log("Task 32: ", capitalize());
+
+
+// Task 33
+
+
+const emailExample = "aradviktor@gmail.com";
+
+const email = function () {
+    const seperate = emailExample.split("@");
+    const name = seperate[0];
+    const domain = seperate[1];
+
+    return name.slice(0, 4) + "..." + "@" + domain;
+};
+
+console.log("Task 33: ", email());
+
+
+// Task 34
+
+
+const swapCase = "I'm Going To Work";
+
+const swap = function () {
+    return swapCase.split("").map(char => {
+        if (char === char.toLowerCase()) {
+            return char.toUpperCase();
+        } else {
+            return char.toLowerCase();
+        };
+        }).join("");
+};
+
+console.log("Task 34: ", swap());
