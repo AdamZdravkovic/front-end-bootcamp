@@ -1,0 +1,138 @@
+$primary-color: #4a4e69;
+$light-color: #ffffff;
+$hover-color: #dcdcdc;
+$font-main: "Project Font", Arial, sans-serif;
+$input-radius: 8px;
+$map-radius: 12px;
+$transition-time: 0.3s;
+$padding-main: 30px;
+$nav-height: 60px;
+
+@font-face {
+font-family: "Project Font";
+src: url("fonts/RobotoMono-VariableFont_wght.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-main;
+  line-height: 1.6;
+  }
+
+nav {
+background-color: $primary-color;
+height: $nav-height;
+font-size: 16px;
+position: sticky;
+top: 0;
+z-index: 1;
+
+ul {
+display: flex;
+align-items: center;
+justify-content: space-between;
+list-style: none;
+padding: 0 14px;
+height: 100%;
+}
+
+li {
+color: $light-color;
+text-decoration: none;
+
+&.logo {
+  margin-right: auto;
+}
+
+&:not(.logo) {
+  margin-left: 25px;
+}
+
+}
+
+a {
+text-decoration: none;
+color: $light-color;
+
+&:hover {
+  color: $hover-color;
+  transition: color $transition-time ease;
+}
+
+}
+}
+
+main {
+background-image: url('img/bg-seamless-1.webp');
+background-position: top left;
+background-repeat: repeat;
+background-size: 500px;
+height: 865px;
+padding: $padding-main;
+}
+
+.contact-form {
+margin-top: 1rem;
+display: flex;
+flex-direction: column;
+
+input,
+textarea {
+margin-bottom: 1rem;
+padding: 0.4rem;
+}
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+width: 100%;
+padding: 0.4rem;
+border-radius: $input-radius;
+border: 2px solid $primary-color;
+}
+
+.name-email {
+display: flex;
+gap: 1rem;
+}
+
+.name,
+.email {
+width: 100%;
+}
+
+button {
+width: 150px;
+padding: 0.5rem;
+color: white;
+border: none;
+background-color: $primary-color;
+border-radius: $input-radius;
+cursor: pointer;
+}
+
+.map {
+border: 2px solid $primary-color;
+border-radius: $map-radius;
+margin-top: 1rem;
+
+iframe {
+border: none;
+display: block;
+border-radius: 10px;
+width: 100%;
+height: 300px;
+}
+}
+
+footer {
+background-color: $primary-color;
+color: white;
+height: $nav-height;
+text-align: center;
+padding: 16px;
+margin-top: -30px;
+}
