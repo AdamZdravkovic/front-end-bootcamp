@@ -102,26 +102,6 @@ const greaterThanTen = array => array.reduce((acc, item, index) => {
 console.log("Task 8:", greaterThanTen([1.6, 11.34, 29.23, 7, 3.11, 18]));
 
 
-
-/*
-How reduce() works:
-
-const numbers = [10, 20, 30];
-
-const sum = numbers.reduce((accumulator, currentValue, currentIndex, array) => {
-  // accumulator: result from previous step (starts at initialValue)
-  // currentValue: current number in the array
-  // currentIndex: index of the current number
-  // array: the original array being processed
-
-  console.log(`Index: ${currentIndex}, Accumulator: ${accumulator}, Current Value: ${currentValue}`);
-
-  return accumulator + currentValue; // Update accumulator by adding currentValue
-}, 0); // initialValue is 0
-
-console.log("Total sum:", sum);
-*/
-
 /* Task 9
 Create an array of persons (name and age). Use enhanced object literals
 Write a function that prints names of persons older than 25.
@@ -129,20 +109,21 @@ Write a function that checks if there is any person older than 40.
 Write a function that checks if all persons are older than 20 */
 
 
+const createPerson = (name, age) => ({name, age});
+
 const persons = [
-    {
-        name: "Adam",
-        age: 29
-    },
-    {
-        name: "Petar",
-        age: 28
-    },
-    {
-        name: "Sava",
-        age: 27
-    }
+    createPerson("Adam", 29),
+    createPerson("Petar", 29),
+    createPerson("Sava", 28)
 ];
+
+const olderThan25 = persons.filter(person => person.age >= 25).map(person => person.name);
+
+const olderThan40 = persons.some(person => person.age > 40);
+
+const olderThan20 = persons.every(person => person.age > 20);
+
+console.log("Task 9:", "Names:", olderThan25, ";", "Anyone older than 40?", olderThan40,";", "Everyone older than 20?", olderThan20);
 
 
 // Task 10
@@ -170,7 +151,6 @@ console.log("Task 11:", arrayProduct([2, 8, 3]));
 const maxValue = array => Math.max(...array);
 
 console.log("Task 12:", maxValue([2, 7, 3, 8, 5.4]));
-
 
 
 // Task 13
