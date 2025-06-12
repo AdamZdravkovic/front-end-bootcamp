@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      padding: 40px;
+      color: #333;
+    }
+    h1 {
+      color: #0066cc;
+    }
+    p {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to the Random Page</h1>
+  <p>This is a randomly generated HTML page. There's no specific purpose here—just text to fill the space and demonstrate basic HTML structure.</p>
+  <p>Sometimes, randomness is exactly what you need to break out of a creative rut. Enjoy the emptiness, or fill it with something meaningful!</p>
+  <script>
+  function logMessage() {
+    console.log("Hello, World");
+  }
+  window.onload = logMessage;
+  </script>
+  <script src="main.js"></script>
+  <script>
+    logNewMessage();
+    logBrowserInfo();
+    isOnline();
+    logScreenInfo();
+    logLocationInfo();
+    storeData("username", "adam");
+    readData("username");
+    removeData("username")
+    storeSessionData("username", "adam");
+    readSessionData("username");
+    showGreeting();
+    console.log(randomNumbers());
+  </script>
+</body>
+</html>
