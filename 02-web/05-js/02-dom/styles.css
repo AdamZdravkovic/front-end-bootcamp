@@ -1,0 +1,16 @@
+.highlight {
+    background-color:chocolate
+}
+
+.new-color {
+    background-color:burlywood;
+}
+
+.vitamin-style {
+    background-color: paleturquoise;
+    text-transform: uppercase;
+}
+
+.active {
+    background-color: blueviolet;
+}
