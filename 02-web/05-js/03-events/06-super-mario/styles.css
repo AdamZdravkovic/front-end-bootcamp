@@ -1,0 +1,41 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #5c94fc; /* Sky blue */
+  font-family: sans-serif;
+}
+
+/* Game area */
+.game-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Ground */
+.ground {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 120px;
+  background: url("./img/bg.jpg") repeat-x;
+  background-size: cover;
+}
+
+/* Mario */
+#mario {
+  position: absolute;
+  bottom: 120px;
+  left: 100px;
+  width: 80px;
+  transition: transform 0.1s linear;
+}

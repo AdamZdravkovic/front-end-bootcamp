@@ -1,0 +1,73 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: sans-serif;
+  background-color: #000;
+}
+
+/* Container to crop vertical overflow */
+.field-wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;        /* hides vertical overflow */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Field image fills width and crops height */
+.field-img {
+  width: 100vw;            /* full viewport width */
+  height: 100vh;           /* full viewport height */
+  object-fit: cover;       /* crop & cover, like background-size: cover */
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Player positioned on top */
+#player {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  width: 145px;
+  transition: top 0.15s, left 0.15s;
+  user-select: none;
+}
+
+#toggleMoveBtn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  padding: 8px 15px;
+  font-size: 16px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.5);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  user-select: none;
+  z-index: 1000; /* Make sure button is on top */
+}
+
+#toggleMoveBtn:hover {
+  background-color: #1976d2;
+  transform: scale(1.05);
+}
+
+#toggleMoveBtn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.7);
+}
+
