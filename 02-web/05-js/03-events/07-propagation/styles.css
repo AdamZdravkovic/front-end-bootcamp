@@ -1,0 +1,23 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+}
+
+.gallery img.wide {
+  width: 300px; /* This image will meet the special condition */
+}
