@@ -1,41 +1,22 @@
-/* Reset */
-* {
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body, html {
-  width: 100%;
-  height: 100%;
   overflow: hidden;
-  background-color: #5c94fc; /* Sky blue */
-  font-family: sans-serif;
 }
 
-/* Game area */
 .game-container {
   position: relative;
   width: 100vw;
   height: 100vh;
+  background: url("./img/bg.jpg") repeat-x bottom;
+  background-size: auto 100%; /* ✅ Stretch without crop or zoom */
   overflow: hidden;
 }
 
-/* Ground */
-.ground {
-  position: absolute;
-  bottom: 0;
-  width: 200%;
-  height: 120px;
-  background: url("./img/bg.jpg") repeat-x;
-  background-size: cover;
-}
 
-/* Mario */
-#mario {
+.mario {
   position: absolute;
-  bottom: 120px;
-  left: 100px;
-  width: 80px;
-  transition: transform 0.1s linear;
+  left: 50px;
+  bottom: 18vh; /* keeps Mario slightly above bottom no matter the screen size */
+  width: 120px;
+  height: auto;
 }
