@@ -2,61 +2,260 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <title>Bookmaker’s</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bookmaker’s – Demo</title>
   <style>
-    :root { color-scheme: light dark; }
-    body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-      margin: 0; padding: 2rem; line-height: 1.4;
+    :root {
+      color-scheme: light dark;
+      --bg: rgb(255 255 255 / 1);
+      --fg: rgb(17 24 39 / 1);
+      --muted: rgb(107 114 128 / 1);
+      --card: rgb(249 250 251 / 1);
+      --border: rgb(229 231 235 / 1);
+      --ring: #6366f1;
+      --radius: 10px;
+      --pad: 0.8rem;
+      --gap: 1rem;
     }
-    header { margin-bottom: 1rem; }
-    h1 { margin: 0 0 .25rem; font-size: 1.25rem; }
-    .hint { color: #666; font-size: .95rem; }
-    pre#output {
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      background: rgba(127,127,127,.08);
-      border: 1px solid rgba(127,127,127,.25);
-      border-radius: 12px;
+    @media (prefers-color-scheme: dark) {
+      :root{
+        --bg: rgb(17 17 17 / 1);
+        --fg: rgb(237 237 237 / 1);
+        --muted: rgb(160 160 160 / 1);
+        --card: rgb(28 28 28 / 1);
+        --border: rgb(56 56 56 / 1);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.5;
+      background: var(--bg);
+      color: var(--fg);
+    }
+
+    header {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h1 { margin: 0; font-size: 1.15rem; }
+    .muted { color: var(--muted); font-size: .9rem; }
+
+    main {
       padding: 1rem;
-      margin-top: 1rem;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      display: grid;
+      gap: var(--gap);
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      align-items: start;
+    }
+
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: var(--pad);
+    }
+    section h2 { margin: 0 0 .6rem; font-size: 1rem; }
+
+    form { display: grid; gap: .6rem; }
+
+    label { display: grid; gap: .25rem; font-size: .92rem; }
+
+    input, select, button, textarea {
+      font: inherit;
+      width: 100%;
+      padding: .5rem .6rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--fg);
+    }
+
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    input[type="number"] { appearance: textfield; }
+
+    button {
+      cursor: pointer;
+      background: var(--fg);
+      color: var(--bg);
+      border-color: var(--fg);
+      transition: transform .02s ease-in-out, opacity .15s ease-in-out;
+    }
+    button:hover { opacity: .9; }
+    button:active { transform: translateY(1px); }
+
+    :is(input, select, button, textarea):focus-visible {
+      outline: 2px solid var(--ring);
+      outline-offset: 2px;
+    }
+
+    #output {
+      white-space: pre-wrap;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: var(--pad);
       min-height: 10rem;
     }
-    noscript {
-      display: inline-block;
-      padding: .5rem .75rem;
-      border: 1px solid #e0a000;
-      background: #fff8e1;
-      border-radius: 8px;
-      margin-top: .5rem;
-    }
-  </style>
 
-  <!-- If your IIFE writes to #output, keep this before the script so the element exists -->
+    .span-all { grid-column: 1 / -1; }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Bookmaker’s</h1>
-    <div class="hint">Results will render below. Your <code>booking-house.js</code> should set the text of <code>#output</code>.</div>
-    <noscript>Enable JavaScript to run the exercise.</noscript>
+    <h1>Bookmaker’s — MVC Playground</h1>
+    <div class="muted">Hook your controller to the elements below. No JS included here.</div>
   </header>
 
-  <!-- Your JS should write the final formatted string here -->
-  <pre id="output" aria-live="polite" role="status">Loading…</pre>
+  <main>
+    <!-- Country -->
+    <section>
+      <h2>Country</h2>
+      <form id="form-country" autocomplete="off">
+        <label for="country-name">Name
+          <input id="country-name" placeholder="Serbia" />
+        </label>
+        <label for="country-odds">Odds
+          <input id="country-odds" type="number" step="0.01" placeholder="2.10" />
+        </label>
+        <label for="country-continent">Continent
+          <select id="country-continent">
+            <option value="EUROPE">EUROPE</option>
+            <option value="ASIA">ASIA</option>
+            <option value="AFRICA">AFRICA</option>
+            <option value="SOUTH_AMERICA">SOUTH_AMERICA</option>
+            <option value="NORTH_AMERICA">NORTH_AMERICA</option>
+            <option value="AUSTRALIA">AUSTRALIA</option>
+          </select>
+        </label>
+        <button id="btn-create-country" type="button">Create Country</button>
+      </form>
 
-  <!-- Optional: tiny helper so you can just call window.render(text) from your IIFE -->
-  <script>
-    (function () {
-      const box = document.getElementById('output');
-      window.render = function (text) {
-        box.textContent = String(text == null ? '' : text);
-      };
-    })();
-  </script>
+      <label for="select-country-list">Countries</label>
+      <select id="select-country-list"></select>
+    </section>
 
-  <!-- Your exercise code (IIFE, constructors, factories, final print, etc.) -->
-  <script src="./booking-house.js" defer></script>
+    <!-- Person -->
+    <section>
+      <h2>Person</h2>
+      <form id="form-person" autocomplete="off">
+        <label for="person-name">Name
+          <input id="person-name" placeholder="Luka" />
+        </label>
+        <label for="person-surname">Surname
+          <input id="person-surname" placeholder="Stanic" />
+        </label>
+        <label for="person-dob">Date of birth
+          <input id="person-dob" type="date" />
+        </label>
+        <button id="btn-create-person" type="button">Create Person</button>
+      </form>
+
+      <label for="select-person-list">Persons</label>
+      <select id="select-person-list"></select>
+    </section>
+
+    <!-- Address -->
+    <section>
+      <h2>Address</h2>
+      <form id="form-address" autocomplete="off">
+        <label for="address-country">Country code
+          <input id="address-country" placeholder="SR" />
+        </label>
+        <label for="address-city">City
+          <input id="address-city" placeholder="Belgrade" />
+        </label>
+        <label for="address-postal">Postal code
+          <input id="address-postal" type="number" placeholder="11000" />
+        </label>
+        <label for="address-street">Street
+          <input id="address-street" placeholder="Nemanjina" />
+        </label>
+        <label for="address-number">Number
+          <input id="address-number" type="number" placeholder="4" />
+        </label>
+        <button id="btn-create-address" type="button">Create Address</button>
+      </form>
+
+      <label for="select-address-list">Addresses</label>
+      <select id="select-address-list"></select>
+    </section>
+
+    <!-- Player -->
+    <section>
+      <h2>Player</h2>
+      <form id="form-player" autocomplete="off">
+        <label for="player-person">Person
+          <select id="player-person"></select>
+        </label>
+        <label for="player-country">Country
+          <select id="player-country"></select>
+        </label>
+        <label for="player-amount">Bet amount
+          <input id="player-amount" type="number" step="1" placeholder="500" />
+        </label>
+        <button id="btn-create-player" type="button">Create Player</button>
+      </form>
+
+      <label for="select-player-list">Players</label>
+      <select id="select-player-list"></select>
+    </section>
+
+    <!-- Betting Place -->
+    <section>
+      <h2>Betting Place</h2>
+      <form id="form-betting-place" autocomplete="off">
+        <label for="bp-address">Address
+          <select id="bp-address"></select>
+        </label>
+        <button id="btn-create-bp" type="button">Create Betting Place</button>
+      </form>
+
+      <form id="form-bp-add-player" autocomplete="off">
+        <label for="bp-select">Betting place
+          <select id="bp-select"></select>
+        </label>
+        <label for="bp-player">Player
+          <select id="bp-player"></select>
+        </label>
+        <button id="btn-bp-add-player" type="button">Add Player to Place</button>
+      </form>
+    </section>
+
+    <!-- Betting House -->
+    <section>
+      <h2>Betting House</h2>
+      <form id="form-house" autocomplete="off">
+        <label for="house-competition">Competition
+          <input id="house-competition" placeholder="Football World Cup Winner" />
+        </label>
+        <button id="btn-create-house" type="button">Create Betting House</button>
+      </form>
+
+      <form id="form-house-add-place" autocomplete="off">
+        <label for="house-place">Betting place
+          <select id="house-place"></select>
+        </label>
+        <button id="btn-house-add-place" type="button">Add Place to House</button>
+      </form>
+
+      <button id="btn-house-report" type="button">Show Report</button>
+    </section>
+
+    <!-- Output -->
+    <section class="span-all">
+      <h2>Output</h2>
+      <pre id="output" aria-live="polite">Ready.</pre>
+    </section>
+  </main>
+
+  
+  <script src="./model.js" defer></script>
+  <script src="./view.js" defer></script>
+  <script src="./controller.js" defer></script>
 </body>
 </html>
