@@ -85,3 +85,46 @@ export const updatePlayerPersonSelectOptions = function (person) {
   option.textContent = `${person.name} ${person.surname}`;
   personSelect.appendChild(option);
 };
+
+export const getAddressFormData = function () {
+  const countryCode = document.querySelector("#address-country");
+  const cityInput = document.querySelector("#address-city");
+  const postalInput = document.querySelector("#address-postal");
+  const addressInput = document.querySelector("#address-street");
+  const numberInput = document.querySelector("#address-number");
+  return {
+    country: countryCode.value,
+    city: cityInput.value,
+    postal: postalInput.value,
+    street: addressInput.value,
+    number: parseInt(numberInput.value, 10),
+  };
+};
+
+export const validateAddressFormData = function (data) {
+  const errors = [];
+  if (!data.country || typeof data.country !== "string") {
+    errors.push("Country is required and must be a string.");
+  }
+  if (!data.city || typeof data.city !== "string") {
+    errors.push("City is required and must be a string.");
+  }
+  if (!data.postal || typeof data.postal !== "string") {
+    errors.push("Postal code is required and must be a string.");
+  }
+  if (!data.street || typeof data.street !== "string") {
+    errors.push("Street is required and must be a string.");
+  }
+  if (isNaN(data.number) || data.number <= 0) {
+    errors.push("House number must be a positive integer.");
+  }
+  return errors;
+}
+
+export const updateBettingPlaceSelectOptions = function (address) {
+  const addressSelect = document.querySelector("#bp-address");
+  const option = document.createElement("option");
+  option.value = `${address.country}, ${address.city}, ${address.street} ${address.number}`;
+  option.textContent = `${address.country}, ${address.city}, ${address.street} ${address.number}`;
+  addressSelect.appendChild(option);
+};

@@ -152,7 +152,7 @@ function createPlayer(name, surname, birthday, betAmount, country) {
   return player;
 }
 
-function createBettingPlace(country, city, postal, street, number) {
+export function createBettingPlace(country, city, postal, street, number) {
   let address = new Address(country, city, postal, street, number);
   let bettingPlace = new BettingPlace(address);
   return bettingPlace;
